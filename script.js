@@ -59,7 +59,7 @@ class Stopwatch {
   }
 
   addToList() {
-    let itemList = document.createElement('li');
+    const itemList = document.createElement('li');
     itemList.innerText = this.format(this.times);
     resultList.appendChild(itemList);
   }
@@ -76,11 +76,12 @@ function pad0(value) {
   }
   return result;
 }
+const stopwatch = new Stopwatch(document.querySelector('.stopwatch'));
 
-let startButton = document.getElementById('start');
+const startButton = document.getElementById('start');
 startButton.addEventListener('click', () => stopwatch.start());
 
-let stopButton = document.getElementById('stop');
+const stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', () => stopwatch.stop());
 
 const resultList = document.querySelector('.results');
@@ -93,9 +94,3 @@ addButton.addEventListener('click', () => stopwatch.addToList());
 
 const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', () => stopwatch.clearList());
-
-const stopwatch = new Stopwatch(
-    document.querySelector('.stopwatch'));
-
-
-
